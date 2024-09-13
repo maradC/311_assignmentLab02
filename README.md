@@ -1,4 +1,5 @@
 
+<img width="1680" alt="Loan Calculator" src="https://github.com/user-attachments/assets/6a698257-2ee8-4e8b-a4b1-a83cec1e2da6">
 
 Suppose you want to write a GUI program that lets the user enter a loan amount, annual interest rate, and number of years and click the Compute Payment button to obtain the monthly payment and total payment.
 

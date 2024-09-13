@@ -5,35 +5,56 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
-import java.awt.event.ActionEvent;
+/**
+ * Controller class for handling the logic of the LoanCalculator UI.
+ */
+public class HelloController {
 
-public class HelloController{
+    // Reference to the calculate button in the FXML file
     @FXML
     public Button calculateButton;
-    @FXML
-    public TextField APRTextField;
-    @FXML
-    public TextField numYearsTextField;
-    @FXML
-    public TextField LoanAmountTextField;
-    @FXML
-    public TextField monthlyPayTextField;
-    @FXML
-    public TextField TotalPayTextField;
 
+    // Reference to the text fields in the FXML file
+    @FXML
+    public TextField APRTextField; // Annual Interest Rate input
+    @FXML
+    public TextField numYearsTextField; // Number of years input
+    @FXML
+    public TextField LoanAmountTextField; // Loan amount input
+    @FXML
+    public TextField monthlyPayTextField; // Output for monthly payment
+    @FXML
+    public TextField TotalPayTextField; // Output for total payment
+
+    /**
+     * Handles the button click event to calculate loan payments.
+     *
+     * @param actionEvent The action event triggered by the button click.
+     */
     @FXML
     public void CalculateButtonClick(javafx.event.ActionEvent actionEvent) {
-        // Store the values that are entered into the interest rate, num years, and loan amt textboxes
-        double annualInterest = Double.parseDouble(APRTextField.getText());
-        int numberOfYears = Integer.parseInt(numYearsTextField.getText());
-        int loanAmount = Integer.parseInt(LoanAmountTextField.getText());
+        try {
+            // Retrieve and parse user inputs
+            double annualInterest = Double.parseDouble(APRTextField.getText());
+            int numberOfYears = Integer.parseInt(numYearsTextField.getText());
+            int loanAmount = Integer.parseInt(LoanAmountTextField.getText());
 
-        // Calculate monthly pay using formula: Monthly Payment = (P * r) / n
-        double monthlyPay = loanAmount * ((annualInterest / 100) / 12);
-        monthlyPayTextField.setText("$" + monthlyPay);
+            // Calculate monthly payment using the formula:
+            // Monthly Payment = (P * r) / n
+            // Where P is the principal, r is the monthly interest rate, and n is the number of payments per year
+            double monthlyInterestRate = (annualInterest / 100) / 12; // Convert annual interest rate to monthly
+            double monthlyPay = loanAmount * monthlyInterestRate;
+            monthlyPayTextField.setText("$" + String.format("%.2f", monthlyPay));
 
-        // Total payment = loan amount + the monthly pay across total num of months (12 * numYears)
-        double totalPayment = loanAmount + (monthlyPay * (numberOfYears * 12));
-        TotalPayTextField.setText("$" + totalPayment);
+            // Calculate total payment over the life of the loan
+            // Total Payment = Loan Amount + (Monthly Payment * Total Number of Payments)
+            // Total Number of Payments = Number of Years * 12 (months per year)
+            double totalPayment = loanAmount + (monthlyPay * (numberOfYears * 12));
+            TotalPayTextField.setText("$" + String.format("%.2f", totalPayment));
+        } catch (NumberFormatException e) {
+            // Handle the case where the input values are not valid numbers
+            monthlyPayTextField.setText("Invalid input");
+            TotalPayTextField.setText("Invalid input");
+        }
     }
 }

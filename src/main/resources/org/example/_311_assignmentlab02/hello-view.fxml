@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<!-- Import necessary JavaFX classes -->
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -8,38 +9,48 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-
+<!-- Define the main container as a TitledPane with the title "LoanCalculator" -->
 <TitledPane text="LoanCalculator" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example._311_assignmentlab02.HelloController">
     <content>
+        <!-- VBox layout for arranging elements vertically with spacing -->
         <VBox alignment="CENTER" prefHeight="271.0" prefWidth="460.0" spacing="20.0">
             <padding>
+                <!-- Padding around the VBox -->
                 <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
             </padding>
-            <HBox spacing = "10.0">
-                <Label text = "Annual Intrest Rate: "/>
+
+            <!-- HBox for horizontal alignment of Label and TextField for Annual Interest Rate -->
+            <HBox spacing="10.0">
+                <Label text="Annual Interest Rate: "/>
                 <TextField fx:id="APRTextField" promptText="Enter Annual Interest Rate"/>
             </HBox>
-            <HBox spacing = "10.0">
-                <Label text = "Number of Years: "/>
+
+            <!-- HBox for horizontal alignment of Label and TextField for Number of Years -->
+            <HBox spacing="10.0">
+                <Label text="Number of Years: "/>
                 <TextField fx:id="numYearsTextField" promptText="Enter Number of Years"/>
             </HBox>
+
+            <!-- HBox for horizontal alignment of Label and TextField for Loan Amount -->
             <HBox spacing="10.0">
-                <Label text = "Loan Amount: "/>
-                <TextField fx:id="LoanAmountTextField" promptText="Enter Loan Amount "/>
+                <Label text="Loan Amount: "/>
+                <TextField fx:id="LoanAmountTextField" promptText="Enter Loan Amount"/>
             </HBox>
+
+            <!-- HBox for horizontal alignment of Label and TextField for Monthly Payment -->
             <HBox spacing="10.0">
-                <Label text = "Monthly Payment : "/>
-                <TextField fx:id="monthlyPayTextField" promptText="Enter Monthly Payment:  "/>
+                <Label text="Monthly Payment: "/>
+                <TextField fx:id="monthlyPayTextField" promptText="Enter Monthly Payment"/>
             </HBox>
+
+            <!-- HBox for horizontal alignment of Label and TextField for Total Payment -->
             <HBox spacing="10.0">
                 <Label text="Total Payment: "/>
                 <TextField fx:id="TotalPayTextField" promptText="Enter Total Payment"/>
             </HBox>
+
+            <!-- Button to trigger calculation with an action handler -->
             <Button fx:id="calculateButton" mnemonicParsing="false" onAction="#CalculateButtonClick" prefHeight="30.0" prefWidth="145.0" text="Calculate" />
-
-
-
         </VBox>
     </content>
-
 </TitledPane>

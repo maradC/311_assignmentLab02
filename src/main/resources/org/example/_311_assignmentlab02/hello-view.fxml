@@ -17,6 +17,16 @@
             </padding>
         </VBox>
 
+        <HBox spacing = "10.0">
+            <Label text = "Annual Intrest Rate: "/>
+            <TextField fx:id="APRTextField" promptText="Enter Annual Interest Rate"/>
+        </HBox>
+        <HBox spacing = "10.0">
+            <Label text = "Number of Years "/>
+            <TextField fx:id="numYearsTextField" promptText="Enter Number of Years"/>
+        </HBox>
+
+
 
     </content>
 

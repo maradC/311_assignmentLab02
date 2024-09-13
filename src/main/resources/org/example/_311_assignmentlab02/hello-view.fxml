@@ -27,11 +27,18 @@
                 <Label text = "Loan Amount: "/>
                 <TextField fx:id="LoanAmountTextField" promptText="Enter Loan Amount "/>
             </HBox>
+            <HBox spacing="10.0">
+                <Label text = "Monthly Payment : "/>
+                <TextField fx:id="monthlyPayTextField" promptText="Enter Monthly Payment:  "/>
+            </HBox>
+            <HBox spacing="10.0">
+                <Label text="Total Payment: "/>
+                <TextField fx:id="TotalPayTextField" promptText="Enter Total Payment"/>
+            </HBox>
+
+
+
         </VBox>
-
-
-
-
     </content>
 
 </TitledPane>

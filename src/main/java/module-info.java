@@ -9,6 +9,7 @@ module org.example._311_assignmentlab02 {
     requires org.kordamp.ikonli.javafx;
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
+    requires java.desktop;
 
     opens org.example._311_assignmentlab02 to javafx.fxml;
     exports org.example._311_assignmentlab02;

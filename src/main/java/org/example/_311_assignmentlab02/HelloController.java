@@ -5,7 +5,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
-public class HelloController {
+import java.awt.event.ActionEvent;
+
+public class HelloController{
     @FXML
     public Button calculateButton;
     @FXML
@@ -18,6 +20,22 @@ public class HelloController {
     public TextField monthlyPayTextField;
     @FXML
     public TextField TotalPayTextField;
+
+    @FXML
+    public void CalculateButtonClick(ActionEvent actionEvent) {
+        // Store the values that are entered into the interest rate, num years, and loan amt textboxes
+        double annualInterest = Double.parseDouble(APRTextField.getText());
+        int numberOfYears = Integer.parseInt(numYearsTextField.getText());
+        int loanAmount = Integer.parseInt(LoanAmountTextField.getText());
+
+        // Calculate monthly pay using formula: Monthly Payment = (P * r) / n
+        double monthlyPay = loanAmount * ((annualInterest / 100) / 12);
+        monthlyPayTextField.setText("$" + monthlyPay);
+
+        // Total payment = loan amount + the monthly pay across total num of months (12 * numYears)
+        double totalPayment = loanAmount + (monthlyPay * (numberOfYears * 12));
+        TotalPayTextField.setText("$" + totalPayment);
+    }
 
 
 

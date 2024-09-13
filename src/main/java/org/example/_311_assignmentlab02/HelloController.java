@@ -1,14 +1,31 @@
 package org.example._311_assignmentlab02;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 
 public class HelloController {
     @FXML
-    private Label welcomeText;
-
+    public Button calculateButton;
     @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
-    }
+    public TextField APRTextField;
+    @FXML
+    public TextField numYearsTextField;
+    @FXML
+    public TextField LoanAmountTextField;
+    @FXML
+    public TextField monthlyPayTextField;
+    @FXML
+    public TextField TotalPayTextField;
+
+
+
+
+
+
+
+
+
+
 }

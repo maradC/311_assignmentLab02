@@ -35,6 +35,7 @@
                 <Label text="Total Payment: "/>
                 <TextField fx:id="TotalPayTextField" promptText="Enter Total Payment"/>
             </HBox>
+            <Button fx:id="calculateButton" mnemonicParsing="false" onAction="#CalculateButtonClick" prefHeight="26.0" prefWidth="115.0" text="Calculate" />
 
 
 

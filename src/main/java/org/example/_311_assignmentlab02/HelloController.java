@@ -22,7 +22,7 @@ public class HelloController{
     public TextField TotalPayTextField;
 
     @FXML
-    public void CalculateButtonClick(ActionEvent actionEvent) {
+    public void CalculateButtonClick(javafx.event.ActionEvent actionEvent) {
         // Store the values that are entered into the interest rate, num years, and loan amt textboxes
         double annualInterest = Double.parseDouble(APRTextField.getText());
         int numberOfYears = Integer.parseInt(numYearsTextField.getText());
@@ -36,14 +36,4 @@ public class HelloController{
         double totalPayment = loanAmount + (monthlyPay * (numberOfYears * 12));
         TotalPayTextField.setText("$" + totalPayment);
     }
-
-
-
-
-
-
-
-
-
-
 }

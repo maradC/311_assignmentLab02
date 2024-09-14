@@ -30,6 +30,11 @@ public class Loan_Calculator extends Application {
         Button btnCalculate = new Button("Calculate");
         btnCalculate.setStyle("-fx-background-color: gray; -fx-text-fill: white;");
 
+        GridPane gridPane = new GridPane();
+        gridPane.setPadding(new Insets(10, 10, 10, 10));
+        gridPane.setVgap(5);
+        gridPane.setHgap(5);
+
 
 
 

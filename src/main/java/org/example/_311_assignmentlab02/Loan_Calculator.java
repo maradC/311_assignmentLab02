@@ -16,6 +16,14 @@ public class Loan_Calculator extends Application {
         Label lblYears = new Label("Number of Years:");
         TextField tfYears = new TextField();
 
+        Label lblLoanAmount = new Label("Loan Amount:");
+        TextField tfLoanAmount = new TextField();
+
+        Label lblMonthlyPayment = new Label("Monthly Payment:");
+        TextField tfMonthlyPayment = new TextField();
+        tfMonthlyPayment.setEditable(false);
+
+
 
 
     }

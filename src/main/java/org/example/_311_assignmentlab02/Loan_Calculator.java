@@ -35,6 +35,25 @@ public class Loan_Calculator extends Application {
         gridPane.setVgap(5);
         gridPane.setHgap(5);
 
+        gridPane.add(lblInterestRate, 0, 0);
+        gridPane.add(tfInterestRate, 1, 0);
+        gridPane.add(lblYears, 0, 1);
+        gridPane.add(tfYears, 1, 1);
+        gridPane.add(lblLoanAmount, 0, 2);
+        gridPane.add(tfLoanAmount, 1, 2);
+        gridPane.add(lblMonthlyPayment, 0, 3);
+        gridPane.add(tfMonthlyPayment, 1, 3);
+        gridPane.add(lblTotalPayment, 0, 4);
+        gridPane.add(tfTotalPayment, 1, 4);
+        gridPane.add(btnCalculate, 1, 5);
+
+        Scene scene = new Scene(gridPane, 438, 313);
+        primaryStage.setTitle("Loan Calculator");
+        primaryStage.setScene(scene);
+        primaryStage.show();
+
+
+
 
 
 

@@ -23,6 +23,14 @@ public class Loan_Calculator extends Application {
         TextField tfMonthlyPayment = new TextField();
         tfMonthlyPayment.setEditable(false);
 
+        Label lblTotalPayment = new Label("Total Payment:");
+        TextField tfTotalPayment = new TextField();
+        tfTotalPayment.setEditable(false);
+
+        Button btnCalculate = new Button("Calculate");
+        btnCalculate.setStyle("-fx-background-color: gray; -fx-text-fill: white;");
+
+
 
 
 
